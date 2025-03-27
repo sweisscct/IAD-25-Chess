@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 2px solid black;
+}
+.cell {
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+    text-align: center;
+    line-height: 60px;
+    user-select: none;
+}
+.white {
+    background-color: #f0d9b5;
+}
+.black {
+    background-color: #b58863;
+}
+.selected {
+    outline: 3px solid red;
+}
