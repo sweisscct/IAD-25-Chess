@@ -1,5 +1,5 @@
 const board = document.getElementById("board");
-const initialSetup = [
+const boardState = [
     "♜","♞","♝","♛","♚","♝","♞","♜",
     "♟","♟","♟","♟","♟","♟","♟","♟",
     "","","","","","","","",
@@ -17,7 +17,7 @@ for (let row = 0; row < 8; row++) {
         const cell = document.createElement("div");
         cell.className = "cell " + ((row + col) % 2 === 0 ? "white" : "black") + " " + row + " " + col;
         cell.dataset.index = row * 8 + col;
-        cell.textContent = initialSetup[row * 8 + col] || "";
+        cell.textContent = boardState[row * 8 + col] || "";
         cell.addEventListener("click", () => {
             if (selected) {
                 selected.classList.remove("selected");
@@ -36,16 +36,6 @@ for (let row = 0; row < 8; row++) {
 }
 
 
-const boardState = [
-    ["♜","♞","♝","♛","♚","♝","♞","♜"],
-    ["♟","♟","♟","♟","♟","♟","♟","♟"],
-    ["","","","","","","",""],
-    ["","","","","","","",""],
-    ["","","","","","","",""],
-    ["","","","","","","",""],
-    ["♙","♙","♙","♙","♙","♙","♙","♙"],
-    ["♖","♘","♗","♕","♔","♗","♘","♖"]
-];
 
 function isKingInCheck(board, kingSymbol) {
     let kingPos = null;
